@@ -677,6 +677,7 @@ public class JspCompilationContext {
                 throw ex;
             } catch (FileNotFoundException fnfe) {
                 // Re-throw to let caller handle this - will result in a 404
+                this.removed = true;
                 throw fnfe;
             } catch (Exception ex) {
                 JasperException je = new JasperException(MESSAGES.failedClassCompilation(),
